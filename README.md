@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 3D Product Website - Technical Assessment (Optional Part)
 
-## Getting Started
+This project was created to fulfill the optional "3D website in React Three Fibre" requirement of the Fullstack Developer Intern technical assessment for Instinctive Studio.
 
-First, run the development server:
+### **Live Demo**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[**https://secure-sight-3d.vercel.app/**](https://YOUR_3D_SITE_VERCEL_URL.app)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### **Deployment Instructions**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To run this project on your local machine, please follow these steps:
 
-## Learn More
+1.  **Clone the Repository**
+    ```bash
+    git clone [YOUR_3D_SITE_GITHUB_REPO_URL]
+    cd secure-sight-3d
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+2.  **Install Dependencies**
+    ```bash
+    npm install
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3.  **Run the Application**
+    ```bash
+    npm run dev
+    ```
+    The application will be available at `http://localhost:3001` (or the next available port).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+### **Technical Decisions**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+*   **Separate Project:** I chose to build this as a separate project to follow best architectural practices. This ensures a clean separation of concerns, keeps dependencies isolated (the main dashboard doesn't need the large `three.js` library), and allows for independent deployment.
+*   **React Three Fiber (R3F):** I selected R3F over vanilla Three.js because its declarative, component-based syntax integrates seamlessly into the React ecosystem. This makes building and managing complex 3D scenes more maintainable and scalable.
+*   **3D Asset Pipeline:** The provided `.blend` source file was exported to the web-optimized `.glb` format. I then used the `gltfjsx` tool to automatically convert this asset into a reusable React component, which is a standard and efficient professional workflow.
+*   **Custom Lighting:** To match the dramatic, high-contrast look of the Figma design, I opted for a custom multi-point lighting setup (using `ambientLight` and `directionalLight`) rather than relying on generic environment lighting.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+### **If I Had More Time…**
+
+*   **Scroll-Based Animations:** I would use a library like GSAP to create scroll-triggered animations, allowing the camera to move and the annotations to fade in as the user scrolls, creating a more dynamic storytelling experience.
+*   **Interactive Hotspots:** I would add clickable hotspots directly on the 3D model that, when clicked, would highlight a specific feature and display more detailed information.
+*   **Performance Optimization:** I would further optimize the 3D model by compressing its textures using a tool like `gltf-transform` to ensure the fastest possible load times for all users.
+*   **UI Animations:** I would add subtle fade-in and transition effects to the HTML annotation elements to make their appearance on screen smoother.
