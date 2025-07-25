@@ -14,7 +14,7 @@ To run this project on your local machine, please follow these steps:
 
 1.  **Clone the Repository**
     ```bash
-    git clone [YOUR_3D_SITE_GITHUB_REPO_URL]
+    git clone https://github.com/Ishank-GH/secure-sight-3d.git
     cd secure-sight-3d
     ```
 
