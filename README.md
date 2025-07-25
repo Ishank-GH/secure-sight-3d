@@ -4,7 +4,7 @@ This project was created to fulfill the optional "3D website in React Three Fibr
 
 ### **Live Demo**
 
-[**https://secure-sight-3d.vercel.app/**](https://YOUR_3D_SITE_VERCEL_URL.app)
+[**3D Website**](https://secure-sight-3d.vercel.app/)
 
 ---
 
